@@ -1,0 +1,7 @@
+parameters:
+#    mayflower_template_tutorial.example.class: Mayflower\TemplateTutorialBundle\Example
+
+services:
+#    mayflower_template_tutorial.example:
+#        class: %mayflower_template_tutorial.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
