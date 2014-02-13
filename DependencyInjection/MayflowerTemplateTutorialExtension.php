@@ -17,7 +17,8 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 class MayflowerTemplateTutorialExtension extends Extension implements PrependExtensionInterface
 {
     /**
-     * {@inheritDoc}
+     * @param array $configs
+     * @param ContainerBuilder $container
      */
     public function load(array $configs, ContainerBuilder $container)
     {
@@ -28,6 +29,9 @@ class MayflowerTemplateTutorialExtension extends Extension implements PrependExt
         $loader->load('services.yml');
     }
 
+    /**
+     * @param ContainerBuilder $container
+     */
     public function prepend(ContainerBuilder $container)
     {
         $config = Yaml::parse( __DIR__ . '/../Resources/config/ezpublish.yml' );

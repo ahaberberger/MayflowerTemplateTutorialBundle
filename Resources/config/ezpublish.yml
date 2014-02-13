@@ -2,7 +2,7 @@ system:
     ezdemo_site_user:
         location_view:
             full:
-                landing_page:
-                    template: MayflowerTemplateTutorialBundle:full:landing.html.twig
+                article:
+                    template: MayflowerTemplateTutorialBundle:full:article.html.twig
                     match:
-                        Identifier\ContentType: landing_page
+                        Identifier\ContentType: article
