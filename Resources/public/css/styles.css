@@ -1,0 +1,4 @@
+body {margin: 0px;}
+#header {width: 100%; height: 50px; margin: 0px; padding: 10px; background-color: #949494;}
+#content {width: 100%; min-height: 200px; margin: 0px; padding: 10px; background-color: #ededed;}
+#footer {width: 100%; min-height: 50px; margin: 0px; padding: 10px; background-color: #646464; color: #ffffff;}
