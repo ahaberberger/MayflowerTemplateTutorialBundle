@@ -1,4 +1,9 @@
-{% extends noLayout ? viewbaseLayout : "MayflowerTemplateTutorialBundle::pagelayout.html.twig" %}
+{% extends "MayflowerTemplateTutorialBundle::pagelayout.html.twig" %}
 {% block content %}
-    <h1>Neues Template!</h1>
+    <h1>{{ ez_render_field( content, "title" ) }}</h1>
+    <h2>[{{ ez_render_field( content, "short_title" ) }}]</h2>
+    {{ ez_render_field( content, "author" ) }}
+    <div>
+        {{ ez_render_field( content, "body" ) }}
+    </div>
 {% endblock %}
