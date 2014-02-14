@@ -1,0 +1,4 @@
+{% extends "MayflowerTemplateTutorialBundle::pagelayout.html.twig" %}
+{% block content %}
+    {{ render(controller('subtree:getArticles', {'location': location})) }}
+{% endblock %}

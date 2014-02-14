@@ -1,7 +1,11 @@
 parameters:
-#    mayflower_template_tutorial.example.class: Mayflower\TemplateTutorialBundle\Example
+  mayflower_template_tutorial.subtree.class: Mayflower\TemplateTutorialBundle\Controller\SubtreeController
 
 services:
-#    mayflower_template_tutorial.example:
-#        class: %mayflower_template_tutorial.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+  mayflower_template_tutorial.subtree:
+    class: %mayflower_template_tutorial.subtree.class%
+    arguments: [@ezpublish.view_manager]
+    calls:
+      - [setContainer, [@service_container]]
+  subtree:
+    alias: mayflower_template_tutorial.subtree

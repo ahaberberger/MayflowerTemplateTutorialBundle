@@ -1,0 +1,16 @@
+<div>Article Liste!</div>
+<ul>
+{% for article in articles %}
+    {{
+        render(
+            controller(
+                "ez_content:viewLocation",
+                {
+                    'locationId': article.contentInfo.mainLocationId,
+                    'viewType': viewType
+                }
+            )
+        )
+    }}
+{% endfor %}
+</ul>
