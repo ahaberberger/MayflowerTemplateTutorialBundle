@@ -10,7 +10,7 @@ system:
                     template: MayflowerTemplateTutorialBundle:full:article.html.twig
                     match:
                         Identifier\ContentType: article
-            linnea:
+            listitem:
                 article:
                     template: MayflowerTemplateTutorialBundle:line:article.html.twig
                     match:

@@ -38,7 +38,7 @@ class SubtreeController extends ViewController
 
         return $this->render(
             'MayflowerTemplateTutorialBundle:list:article_list.html.twig',
-            ['articles' => $articles, 'viewType' => 'linnea']
+            ['articles' => $articles, 'viewType' => 'listitem']
         );
     }
 }
