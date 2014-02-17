@@ -1,5 +1,15 @@
 system:
     ezdemo_site_user:
+        ezpage:
+            layouts:
+                MFZoneLayout:
+                    name: "Mayflower Zone Layout"
+                    template: MayflowerTemplateTutorialBundle:page/zonelayout:mfzonelayout.html.twig
+            enabledLayouts: [MFZoneLayout]
+            blocks:
+                MFBlock:
+                    name: "Mayflower Block"
+            enabledBlocks: [MFBlock]
         location_view:
             full:
                 landing_page:

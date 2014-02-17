@@ -1,0 +1,29 @@
+{% if zones[0].blocks %}
+<div id="top">
+    {# Rendering blocks with default PageController #}
+    {% for block in zones[0].blocks %}
+        {{ render( controller( "ez_page:viewBlock", {'block': block} ) ) }}
+    {% endfor %}
+    <hr />
+</div>
+{% endif %}
+
+{% if zones[1].blocks %}
+<div id="middle">
+    {# Rendering blocks with default PageController #}
+    {% for block in zones[0].blocks %}
+        {{ render( controller( "ez_page:viewBlock", {'block': block} ) ) }}
+    {% endfor %}
+    <hr />
+</div>
+{% endif %}
+
+{% if zones[2].blocks %}
+<div id="bottom">
+    {# Rendering blocks with default PageController #}
+    {% for block in zones[0].blocks %}
+        {{ render( controller( "ez_page:viewBlock", {'block': block} ) ) }}
+    {% endfor %}
+    <hr />
+</div>
+{% endif %}
