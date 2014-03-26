@@ -5,9 +5,14 @@ namespace Mayflower\TemplateTutorialBundle\Controller;
 use eZ\Publish\Core\MVC\Symfony\Controller\Content\ViewController;
 use eZ\Publish\API\Repository\Values\Content\Query\Criterion;
 use eZ\Publish\API\Repository\Values\Content\Query;
+use eZ\Publish\API\Repository\Values\Content\Location;
 
 class SubtreeController extends ViewController
 {
+    /**
+     * @param Location $location
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function getArticles($location)
     {
         $searchService = $this->getRepository()->getSearchService();
@@ -22,23 +27,24 @@ class SubtreeController extends ViewController
             $criterion
         );
 
-        $query->limit = 20;
-
         $articleResults = $searchService->findContent( $query );
 
         $articles = [];
 
-        $locationService = $this->getRepository()->getLocationService();
-
         foreach($articleResults->searchHits as $hit) {
-            //$loc = $locationService->loadLocation($hit->valueObject->versionInfo->contentInfo->mainLocationId);
 
             $articles[] =  $hit->valueObject;
         }
 
+        $response = $this->buildResponse(
+            sprintf('%s_%d', __METHOD__, $location->id),
+            $location->contentInfo->modificationDate
+        );
+
         return $this->render(
             'MayflowerTemplateTutorialBundle:list:article_list.html.twig',
-            ['articles' => $articles, 'viewType' => 'listitem']
+            ['articles' => $articles, 'viewType' => 'listitem'],
+            $response
         );
     }
 }
