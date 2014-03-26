@@ -10,6 +10,11 @@ system:
                 MFBlock:
                     name: "Mayflower Block"
             enabledBlocks: [MFBlock]
+        block_view:
+            rules:
+                template: MayflowerTemplateTutorialBundle:block:mfblock.html.twig
+                match:
+                    Type: MFBlock
         location_view:
             full:
                 landing_page:

@@ -1,5 +1,4 @@
 {% extends "MayflowerTemplateTutorialBundle::pagelayout.html.twig" %}
 {% block content %}
     {{ ez_render_field( content, 'page' ) }}
-    {{ render(controller('subtree:getArticles', {'location': location})) }}
 {% endblock %}

@@ -1,0 +1,16 @@
+{% set validItems = pageService.getValidBlockItems( block ) %}
+<div class="block-mfblock">
+    <ul>
+        {% for item in validItems %}
+            {{ render(
+                controller(
+                    'ez_content:viewLocation',
+                    {
+                        'locationId': item.locationId,
+                        'viewType': 'listitem'
+                    }
+                )
+            ) }}
+        {% endfor %}
+    </ul>
+</div>
